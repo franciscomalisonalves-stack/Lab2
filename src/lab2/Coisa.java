@@ -36,7 +36,7 @@ public class Coisa {
         RegistroTempoOnline tempoP2 = new RegistroTempoOnline("P2");
         System.out.println(tempoP2.toString());
     }
-    /*private static void controlarDisciplina() {
+    private static void controlarDisciplina() {
         Disciplina prog2 = new Disciplina("PROGRAMACAO 2");
         prog2.cadastraHoras(4);
         prog2.cadastraNota(1, 5.0);
@@ -47,7 +47,7 @@ public class Coisa {
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
     }
-    private static void registrarResumos() {
+    /*private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
 
         meusResumos.adiciona("Classes", "Classes definem um tipo e a base de código para criação de objetos.");

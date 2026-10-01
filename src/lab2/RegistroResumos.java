@@ -1,27 +1,23 @@
 package lab2;
 
 public class RegistroResumos {
-    private String [] temas;
-    private String [] resumos;
+    private Resumo [] colecaoResumos;
     private int numeroResumos;
-    private int quantidade;
+
 
     public RegistroResumos(int quantidade){
-        this.quantidade = quantidade;
-        temas = new String[quantidade];
-        resumos = new String[quantidade];
+        colecaoResumos = new Resumo[quantidade];
     }
 
     public void adiciona(String tema, String resumo){
-        int indice = numeroResumos;
-        if (numeroResumos >= quantidade) indice = numeroResumos - quantidade;
-        temas [indice] = tema;
-        resumos [indice] = tema + ": " + resumo;
+        Resumo resumo1 = new Resumo(tema,resumo);
+        int indice = numeroResumos >= colecaoResumos.length? numeroResumos - colecaoResumos.length: numeroResumos;
+        colecaoResumos [indice] = resumo1;
         numeroResumos +=1;
     }
 
-    public String [] pegaResumos(){
-        return resumos;
+    public Resumo [] pegaResumos(){
+        return colecaoResumos;
     }
 
     public int conta(){
@@ -30,7 +26,7 @@ public class RegistroResumos {
 
     public boolean temResumo(String tema){
         for (int i = 0; i < numeroResumos; i++){
-            if (temas[i].equals(tema)){
+            if (colecaoResumos[i].getTema().equals(tema)){
                 return true;
             }
         }
@@ -38,10 +34,11 @@ public class RegistroResumos {
     }
 
     public String imprimeResumos(){
-        String resposta = "- " + numeroResumos + " resumo(s) cadastrado(s)\n" +
-                "- " + temas[0] + " " ;
+        int resumosCadastrados = Math.min(numeroResumos, colecaoResumos.length);
+        String resposta = "- " + resumosCadastrados + " resumo(s) cadastrado(s)\n" +
+                "- " + colecaoResumos[0].getTema() + " " ;
         for (int i = 1; i < numeroResumos; i++){
-            resposta += "| " + temas[i] + " ";
+            resposta += "| "+ colecaoResumos[i].getTema() + " ";
         }
         return resposta.trim();
     }

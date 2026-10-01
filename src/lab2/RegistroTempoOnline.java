@@ -2,16 +2,15 @@ package lab2;
 
 public class RegistroTempoOnline {
     private String nomeDisciplina;
-    private int tempoOnlineEsperado = 120;
+    private int tempoOnlineEsperado;
     private int tempoAtual;
-
-    public RegistroTempoOnline(String nomeDisciplina){
-        this.nomeDisciplina = nomeDisciplina;
-    }
 
     public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado){
         this.nomeDisciplina = nomeDisciplina;
         this.tempoOnlineEsperado = tempoOnlineEsperado;
+    }
+    public RegistroTempoOnline(String nomeDisciplina){
+        this(nomeDisciplina, 120);
     }
     public void adicionaTempoOnline(int tempo){
         tempoAtual += tempo;

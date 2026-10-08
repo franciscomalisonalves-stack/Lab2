@@ -1,5 +1,8 @@
 package lab2;
 
+import java.util.Arrays;
+import java.util.Locale;
+
 /**
  * Para acompanhar os estudos, é preciso ter um pequeno registro de resumos dos estudos realizados ao longo do período.
  * Para isso, é possível inicializar um registro de resumos que armazenará até uma quantidade limitada de resumos.
@@ -75,6 +78,30 @@ public class RegistroResumos {
             resposta += "| "+ colecaoResumos[i].getTema() + " ";
         }
         return resposta.trim();
+    }
+
+    /**
+     * A busca retorna uma lista de strings com os temas onde a palavra buscada faz parte do conteúdo.
+     *
+     * @return Arrays de String com os temas
+     */
+    public String [] busca(String chaveDeBusca){
+        String[] Possiveis = new String[numeroResumos];
+        String[] temasPossiveis;
+        int numeroControle = 0;
+
+        for (int i =0; i < colecaoResumos.length; i++){
+           if(colecaoResumos[i].getConteudo().toLowerCase().contains(chaveDeBusca.toLowerCase())) {
+               Possiveis[numeroControle] = colecaoResumos[i].getTema();
+               numeroControle +=1;
+           }
+        }
+        temasPossiveis = new String[numeroControle];
+        for (int j = 0; j < numeroControle; j++){
+            temasPossiveis[j] = Possiveis[j];
+        }
+        Arrays.sort(temasPossiveis);
+        return temasPossiveis;
     }
 
 

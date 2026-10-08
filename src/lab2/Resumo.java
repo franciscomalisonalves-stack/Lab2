@@ -34,6 +34,13 @@ public class Resumo {
     }
 
     /**
+     * Retorna o conteudo associado ao resumo
+     * @return Conteudo
+     */
+    public String getConteudo(){
+        return conteudo;
+    }
+    /**
      * Retorna a String segue o formato:
      * Tema: conteudo
      * @return A reprentação da String que representa a classe Resumo

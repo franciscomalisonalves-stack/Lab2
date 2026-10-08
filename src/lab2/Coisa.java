@@ -1,4 +1,11 @@
 package lab2;
+/**
+ * Representação do Sistema Coisa, Um sistema complexo
+ * vida do aluno pode ser organizada em quatro atividades básicas: (1) organizar seu tempo de uso de internet para as disciplinas, o que é bem importante considerando as distrações das redes sociais, (2) estudar para as disciplinas, (3) organizar resumos de estudo e (4) acompanhar sua rotina de descanso
+ *
+ * @author Francisco Malison da Silva Alves
+ */
+
 
 public class Coisa {
     public static void main(String[] args) {

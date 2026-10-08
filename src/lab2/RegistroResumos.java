@@ -1,14 +1,36 @@
 package lab2;
 
+/**
+ * Para acompanhar os estudos, é preciso ter um pequeno registro de resumos dos estudos realizados ao longo do período.
+ * Para isso, é possível inicializar um registro de resumos que armazenará até uma quantidade limitada de resumos.
+ *
+ * @author Franciso Malison da Silva Alves
+ */
 public class RegistroResumos {
+    /**
+     * Um Array de Resumos que guarda todos os resumos que foram criados
+     */
     private Resumo [] colecaoResumos;
+    /**
+     *Um atributo que controla o numero de Resumo e é usado para verificar se houve uma estouro no numero de resumos
+     */
     private int numeroResumos;
 
-
+    /**
+     * O construtor da classe que precisa da quantidade maxima de resumos que podem ser cadastrados
+     * @param quantidade
+     */
     public RegistroResumos(int quantidade){
         colecaoResumos = new Resumo[quantidade];
     }
 
+    /**
+     * Adiciona um resumo a coleção de resumos
+     * cada resumo precisa de um tema e de um conteudo em si
+     * Cria-se um objeto resumo que precisa do conteudo e de seu tema
+     * Armazena esse resumo na coleção de resumos, caso o numero seja estrourado o outro resumo é
+     * sobrescrito no primeiro lugar e dps sucessivamente
+     */
     public void adiciona(String tema, String resumo){
         Resumo resumo1 = new Resumo(tema,resumo);
         int indice = numeroResumos >= colecaoResumos.length? numeroResumos - colecaoResumos.length: numeroResumos;
@@ -16,10 +38,18 @@ public class RegistroResumos {
         numeroResumos +=1;
     }
 
+    /**
+     * Retorna o Array de Resumos que guarda todos os resumos que foram cadastrados
+     * @return colecaoResumos
+     */
     public Resumo [] pegaResumos(){
         return colecaoResumos;
     }
 
+    /**
+     * Retorna a quantidade de resumos que já foram cadastrados
+     * @return Numero de Resumos
+     */
     public int conta(){
         return numeroResumos;
     }
@@ -33,6 +63,10 @@ public class RegistroResumos {
         return false;
     }
 
+    /**
+     *A reposta retornada tem uma estrutura de -NresumosCadastrados : Tema[0]|tema[1]|tema[n]
+     * @return String com todos os temas de resumo
+     */
     public String imprimeResumos(){
         int resumosCadastrados = Math.min(numeroResumos, colecaoResumos.length);
         String resposta = "- " + resumosCadastrados + " resumo(s) cadastrado(s)\n" +

@@ -85,7 +85,7 @@ public class RegistroResumos {
      *
      * @return Arrays de String com os temas
      */
-    public String [] busca(String chaveDeBusca){
+    public String [] buscaResumo(String chaveDeBusca){
         String[] Possiveis = new String[numeroResumos];
         String[] temasPossiveis;
         int numeroControle = 0;

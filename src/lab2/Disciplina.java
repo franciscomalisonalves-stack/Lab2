@@ -38,7 +38,7 @@ public class Disciplina {
      * é o construtor da classe que define o nome da disciplina
      */
     public Disciplina(String nomeDisciplina){
-        this(nomeDisciplina, 4, new int[]{1,1,1});
+        this(nomeDisciplina, 4, new int[]{1,1,1,1});
     }
 
     /**

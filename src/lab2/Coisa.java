@@ -1,4 +1,7 @@
 package lab2;
+
+import java.util.Arrays;
+
 /**
  * Representação do Sistema Coisa, Um sistema complexo
  * vida do aluno pode ser organizada em quatro atividades básicas: (1) organizar seu tempo de uso de internet para as disciplinas, o que é bem importante considerando as distrações das redes sociais, (2) estudar para as disciplinas, (3) organizar resumos de estudo e (4) acompanhar sua rotina de descanso
@@ -74,5 +77,6 @@ public class Coisa {
         System.out.println(meusResumos.imprimeResumos());
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
+        System.out.println(Arrays.toString(meusResumos.buscaResumo("Conjunto")));
     }
 }

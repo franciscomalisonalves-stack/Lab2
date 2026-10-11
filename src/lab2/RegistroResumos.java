@@ -90,12 +90,12 @@ public class RegistroResumos {
         String[] temasPossiveis;
         int numeroControle = 0;
 
-        for (int i =0; i < colecaoResumos.length; i++){
-           if(colecaoResumos[i].getConteudo().toLowerCase().contains(chaveDeBusca.toLowerCase())) {
-               Possiveis[numeroControle] = colecaoResumos[i].getTema();
-               numeroControle +=1;
-           }
-        }
+            for (int i = 0; i < Math.min(colecaoResumos.length, numeroResumos); i++) {
+                if (colecaoResumos[i].getConteudo().toLowerCase().contains(chaveDeBusca.toLowerCase())) {
+                    Possiveis[numeroControle] = colecaoResumos[i].getTema();
+                    numeroControle += 1;
+                }
+            }
         temasPossiveis = new String[numeroControle];
         for (int j = 0; j < numeroControle; j++){
             temasPossiveis[j] = Possiveis[j];
